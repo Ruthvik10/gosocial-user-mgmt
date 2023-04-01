@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/Ruthvik10/gosocial-user-mgmt/logger"
+	"github.com/Ruthvik10/go-shared-library/logger"
 	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
