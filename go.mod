@@ -3,7 +3,7 @@ module github.com/Ruthvik10/gosocial-user-mgmt
 go 1.20
 
 require (
-	github.com/Ruthvik10/go-shared-library v1.0.2
+	github.com/Ruthvik10/go-shared-library v1.0.3
 	github.com/joho/godotenv v1.5.1
 )
 

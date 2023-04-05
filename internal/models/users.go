@@ -1,4 +1,4 @@
-package domain
+package models
 
 import (
 	"time"
@@ -12,9 +12,13 @@ type User struct {
 	Email          string               `bson:"email"`
 	Password       string               `bson:"password"`
 	ProfilePicture *string              `bson:"profilePicture,omitempty"`
-	Bio            *string              `bson:"bio, omitempty"`
+	Bio            *string              `bson:"bio,omitempty"`
 	Birthdate      time.Time            `bson:"birthdate"`
 	JoinedDate     time.Time            `bson:"joinedDate"`
 	Followers      []primitive.ObjectID `bson:"followers,omitempty"`
 	Following      []primitive.ObjectID `bson:"following,omitempty"`
+}
+
+type UserStore interface {
+	Create(*User) (*User, error)
 }
