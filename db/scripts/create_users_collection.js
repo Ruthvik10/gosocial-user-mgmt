@@ -61,6 +61,10 @@ db.createCollection('users', {
                             description:
                                 'Joined date is required and should be a date',
                         },
+                        activated: {
+                            bsonType: 'bool',
+                            description: 'Activated should be a boolean',
+                        },
                         followers: {
                             bsonType: 'array',
                             items: {
@@ -84,6 +88,8 @@ db.createCollection('users', {
         ],
     },
 });
+
+db.users.createIndex({ email: 1 }, { unique: true });
 
 // db.runCommand({
 //     collMod: 'users',
