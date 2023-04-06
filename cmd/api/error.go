@@ -23,17 +23,17 @@ func (app *application) errorResponse(w http.ResponseWriter, r *http.Request, st
 	}
 }
 
-func (app *application) ServerErrorResponse(w http.ResponseWriter, r *http.Request, err error) {
+func (app *application) serverErrorResponse(w http.ResponseWriter, r *http.Request, err error) {
 	app.logError(r, err)
 	message := "the server encountered a problem and could not process your request"
 	app.errorResponse(w, r, http.StatusInternalServerError, message)
 }
 
-func (app *application) NotFoundErrorResponse(w http.ResponseWriter, r *http.Request) {
+func (app *application) notFoundErrorResponse(w http.ResponseWriter, r *http.Request) {
 	message := "could not find the requested resource"
 	app.errorResponse(w, r, http.StatusNotFound, message)
 }
 
-func (app *application) BadRequestErrorResponse(w http.ResponseWriter, r *http.Request, err error) {
+func (app *application) badRequestErrorResponse(w http.ResponseWriter, r *http.Request, err error) {
 	app.errorResponse(w, r, http.StatusNotFound, err.Error())
 }
